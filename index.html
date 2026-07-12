@@ -4,8 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarah Dykes | Personal Portfolio</title>
+<meta name="description" content="Sarah Dykes personal portfolio showcasing skills, experience, and projects.">
 
 <style>
+:root{
+    --primary:#1e3c72;
+    --primary-light:#4b82ff;
+    --background:#f5f7fa;
+    --text:#333;
+    --card:#ffffff;
+    --shadow:rgba(0,0,0,.08);
+}
+
 *{
     margin:0;
     padding:0;
@@ -19,8 +29,33 @@ html{
 body{
     font-family:Arial, Helvetica, sans-serif;
     line-height:1.7;
-    color:#333;
-    background:#f5f7fa;
+    color:var(--text);
+    background:var(--background);
+}
+
+.skip-link{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translateY(-120%);
+    background:white;
+    color:var(--primary);
+    padding:12px 18px;
+    z-index:999;
+    transition:transform .2s ease;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible{
+    transform:translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline:3px solid var(--primary-light);
+    outline-offset:3px;
 }
 
 header{
@@ -40,6 +75,15 @@ header p{
     opacity:.95;
 }
 
+.header .hero-tagline,
+.hero-tagline{
+    max-width:720px;
+    margin:16px auto 0;
+    font-size:1rem;
+    opacity:.85;
+    line-height:1.6;
+}
+
 nav{
     position:sticky;
     top:0;
@@ -50,12 +94,14 @@ nav{
 
 nav ul{
     display:flex;
+    flex-wrap:wrap;
     justify-content:center;
+    gap:15px;
     list-style:none;
 }
 
 nav li{
-    margin:0 20px;
+    margin:0;
 }
 
 nav a{
@@ -170,14 +216,63 @@ footer{
     opacity:1;
     transform:translateY(0);
 }
+
+@media (max-width: 768px) {
+    header{
+        padding:70px 16px;
+    }
+
+    header h1{
+        font-size:2.2rem;
+    }
+
+    header p{
+        font-size:1.05rem;
+    }
+
+    .hero-tagline{
+        font-size:0.95rem;
+        padding:0 10px;
+    }
+
+    section{
+        padding:50px 0;
+    }
+
+    .container{
+        width:95%;
+    }
+
+    .skills,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .card,
+    .project,
+    .skill{
+        padding:20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        animation-duration:0.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:0.01ms !important;
+        scroll-behavior:auto !important;
+    }
+}
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
     <h1>Sarah Dykes</h1>
-    <p>Adaptable • Initiative-Driven • Reliable Problem Solver</p>
+    <p>Dependable problem solver who helps teams stay productive, adapt quickly, and improve everyday operations.</p>
+    <p class="hero-tagline">I bring strong initiative, clear communication, and practical solutions to support your next challenge.</p>
 </header>
 
 <nav aria-label="Primary navigation">
@@ -189,7 +284,7 @@ footer{
     </ul>
 </nav>
 
-<main>
+<main id="main-content">
 <section id="about">
 <div class="container fade">
     <div class="card">
@@ -336,7 +431,7 @@ new opportunities and would be happy to connect.
 <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
 </p>
 
-<button onclick="showMessage()">Let's Connect</button>
+<button type="button" onclick="showMessage()">Let's Connect</button>
 
 <p id="message" style="margin-top:20px;font-weight:bold;"></p>
 
