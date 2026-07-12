@@ -1,2 +1,0 @@
-# ResumeWebsite
-Week 1
