@@ -4,183 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarah Dykes | Personal Portfolio</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.7;
-    color:#333;
-    background:#f5f7fa;
-}
-
-header{
-    background:linear-gradient(135deg,#1e3c72,#2a5298);
-    color:white;
-    text-align:center;
-    padding:100px 20px;
-}
-
-header h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-header p{
-    font-size:1.3rem;
-    opacity:.95;
-}
-
-nav{
-    position:sticky;
-    top:0;
-    background:white;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
-    z-index:100;
-}
-
-nav ul{
-    display:flex;
-    justify-content:center;
-    list-style:none;
-}
-
-nav li{
-    margin:0 20px;
-}
-
-nav a{
-    display:block;
-    padding:18px 0;
-    color:#1e3c72;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#4b82ff;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-section{
-    padding:70px 0;
-}
-
-h2{
-    color:#1e3c72;
-    margin-bottom:25px;
-    font-size:2rem;
-}
-
-.card{
-    background:white;
-    padding:35px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-top:30px;
-}
-
-.skill{
-    background:#ffffff;
-    border-left:5px solid #2a5298;
-    padding:25px;
-    border-radius:8px;
-    box-shadow:0 5px 15px rgba(0,0,0,.05);
-}
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.project{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.project:hover{
-    transform:translateY(-6px);
-}
-
-.project h3{
-    margin-bottom:12px;
-    color:#1e3c72;
-}
-
-.contact{
-    text-align:center;
-}
-
-button{
-    background:#1e3c72;
-    color:white;
-    border:none;
-    padding:14px 28px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:1rem;
-    margin-top:20px;
-    transition:.3s;
-}
-
-button:hover{
-    background:#2a5298;
-}
-
-footer{
-    background:#1e3c72;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:50px;
-}
-
-.fade{
-    opacity:0;
-    transform:translateY(20px);
-    transition:all .8s ease;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-</style>
+<meta name="description" content="Sarah Dykes personal portfolio showcasing skills, experience, and projects.">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
     <h1>Sarah Dykes</h1>
-    <p>Adaptable • Initiative-Driven • Reliable Problem Solver</p>
+    <p>Dependable problem solver who helps teams stay productive, adapt quickly, and improve everyday operations.</p>
+    <p class="hero-tagline">I bring strong initiative, clear communication, and practical solutions to support your next challenge.</p>
 </header>
 
-<nav>
+<nav aria-label="Primary navigation">
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#bring">What I Bring</a></li>
@@ -189,6 +26,7 @@ footer{
     </ul>
 </nav>
 
+<main id="main-content">
 <section id="about">
 <div class="container fade">
     <div class="card">
@@ -327,22 +165,23 @@ Thank you for visiting my website. I'm always interested in discussing
 new opportunities and would be happy to connect.
 </p>
 
-<p style="margin-top:20px;">
-<strong>Email:</strong> your.email@example.com
+<p class="contact-meta">
+<strong>Email:</strong> sarah.dykes@pursuit.gmail.com
 </p>
 
 <p>
 <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
 </p>
 
-<button onclick="showMessage()">Let's Connect</button>
+<button type="button" onclick="showMessage()">Let's Connect</button>
 
-<p id="message" style="margin-top:20px;font-weight:bold;"></p>
+<p id="message" class="message-output"></p>
 
 </div>
 
 </div>
 </section>
+</main>
 
 <footer>
 © 2026 Sarah Dykes. All Rights Reserved.

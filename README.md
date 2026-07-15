@@ -1,2 +1,1 @@
-# ResumeWebsite
-Week 1
+This is for Week One
