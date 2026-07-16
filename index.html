@@ -29,6 +29,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()"></button>
 </nav>
 
 <main id="main-content">
@@ -193,6 +194,25 @@ new opportunities and would be happy to connect.
 </footer>
 
 <script>
+// Theme toggle functionality
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Initialize theme on page load
+initializeTheme();
+
+// Intersection Observer for fade-in animations
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
